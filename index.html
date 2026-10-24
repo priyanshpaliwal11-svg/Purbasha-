@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Favourite Person ❤️</title>
+  <style>
+    :root {
+      --bg-color: #ffe6e9;
+      --card-bg: #ffffff;
+      --primary-color: #ff4b72;
+      --text-color: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background animated hearts */
+    .heart-bg {
+      position: fixed;
+      top: -10%;
+      font-size: 20px;
+      color: rgba(255, 75, 114, 0.4);
+      animation: fall 6s linear infinite;
+      z-index: 0;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 75, 114, 0.15);
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+      z-index: 1;
+      position: relative;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      box-shadow: 0 5px 15px rgba(255, 75, 114, 0.3);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background-color: #e03a5f;
+    }
+
+    /* Hidden Letter Box */
+    .letter-box {
+      display: none;
+      margin-top: 25px;
+      padding: 30px 25px;
+      background: #fff9fa;
+      border: 2px dashed #ffb6c1;
+      border-radius: 15px;
+      text-align: left;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      animation: fadeIn 0.8s ease-in-out forwards;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      text-align: right;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Hearts Background -->
+  <script>
+    function createHearts() {
+      for (let i = 0; i < 25; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-bg');
+        heart.innerText = '💖';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+        heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+        document.body.appendChild(heart);
+      }
+    }
+    createHearts();
+  </script>
+
+  <div class="container">
+    <h1>Hello baby ❤️</h1>
+    <p class="subtitle">I made something special for you, Purbasha...</p>
+
+    <button class="btn" id="openBtn" onclick="revealLetter()">Tap to Open Letter 💌</button>
+
+    <div class="letter-box" id="letter">I'm sorry for the things that happened yesterday. I'm just glad you're still with me, because I never want to lose you. ❤️
+
+I know you feel that I don't put in enough effort, and I'm sorry for making you feel that way. Baby, I don't want my love to be just words anymore. I want to put in real effort, make you feel special, understand you better, and show you how much you mean to me through my actions. I know I have things to improve, and I'm genuinely willing to work on them for us. 🥹❤️
+
+I know you've given me these four weeks to give you the commitment you deserve, and I understand how important this is to you. I don't take your time or your feelings lightly. I want to use these weeks to show you that I'm serious about you and our future together. 🫶🏻
+
+I don't just want to tell you I love you, baby. I want to make you feel loved, valued, and chosen every single day. ❤️
+
+You're my favourite person, Purbasha, and I want to give us my genuine effort, not just promises. I want to make you happy, make you feel secure with me, and show you that choosing us is something I'm willing to work for. 🧿❤️
+
+<div class="signature">Forever your Priyansh 🧿❤️</div>
+    </div>
+  </div>
+
+  <script>
+    function revealLetter() {
+      const letter = document.getElementById('letter');
+      const btn = document.getElementById('openBtn');
+      
+      letter.style.display = 'block';
+      btn.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
